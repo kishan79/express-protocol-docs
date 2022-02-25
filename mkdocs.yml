@@ -1,0 +1,69 @@
+site_name: Express Protocol
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - "Protocol SDK":
+      - Overview: sdk/overview.md
+      - "Getting Started": sdk/gettingStarted.md
+      - "SDK Functions":
+          - ERC721: sdk/SDKFunctions/erc721.md
+          - ERC1155: sdk/SDKFunctions/erc1155.md
+      - ERC721:
+          - "Public Collection":
+              - "Overview": sdk/erc721/PublicCollection/1_PNDC.md
+              - "Mint": sdk/erc721/PublicCollection/2_Minting.md
+              - "BatchMint": sdk/erc721/PublicCollection/3_BatchMinting.md
+              - "Burn": sdk/erc721/PublicCollection/4_Burning.md
+              - "Sell": sdk/erc721/PublicCollection/5_Selling.md
+              - "Buy": sdk/erc721/PublicCollection/6_Buying.md
+              - "Auction": sdk/erc721/PublicCollection/7_Auctioning.md
+              - "Bid": sdk/erc721/PublicCollection/8_Bidding.md
+              - "Execute Bid": sdk/erc721/PublicCollection/9_ExecutingBid.md
+              - "Withdraw Bid": sdk/erc721/PublicCollection/10_WithdrawBid.md
+              - "Cancel Sale": sdk/erc721/PublicCollection/11_CancellingSale.md
+          - "Personal Collection":
+              - "Create Collection": sdk/erc721/PersonalCollection/1_PersonalCollection.md
+              - "Mint": sdk/erc721/PersonalCollection/2_Minting.md
+              - "BatchMint": sdk/erc721/PersonalCollection/3_BatchMinting.md
+              - "Burn": sdk/erc721/PersonalCollection/4_Burning.md
+              - "Sell": sdk/erc721/PersonalCollection/5_Selling.md
+              - "Buy": sdk/erc721/PersonalCollection/6_Buying.md
+              - "Auction": sdk/erc721/PersonalCollection/7_Auctioning.md
+              - "Bid": sdk/erc721/PersonalCollection/8_Bidding.md
+              - "Execute": sdk/erc721/PersonalCollection/9_ExecutingBid.md
+              - "Withdraw": sdk/erc721/PersonalCollection/10_WithdrawingBid.md
+              - "Cancel Sale": sdk/erc721/PersonalCollection/11_CancellingSale.md
+      - ERC1155:
+          - "Public Collection":
+              - "Overview": sdk/erc721/PublicCollection/PNDC.md
+              - "Mint": sdk/erc721/PublicCollection/PNDC.md
+              - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
+              - "Burn": sdk/erc721/PublicCollection/PNDC.md
+              - "Sell": sdk/erc721/PublicCollection/PNDC.md
+              - "Buy": sdk/erc721/PublicCollection/PNDC.md
+              - "Auction": sdk/erc721/PublicCollection/PNDC.md
+              - "Bid": sdk/erc721/PublicCollection/PNDC.md
+              - "Execute Bid": sdk/erc721/PublicCollection/PNDC.md
+              - "Withdraw Bid": sdk/erc721/PublicCollection/PNDC.md
+              - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+          - "Personal Collection":
+              - "Create Collection": sdk/erc721/PublicCollection/PNDC.md
+              - "Mint": sdk/erc721/PublicCollection/PNDC.md
+              - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
+              - "Burn": sdk/erc721/PublicCollection/PNDC.md
+              - "Sell": sdk/erc721/PublicCollection/PNDC.md
+              - "Buy": sdk/erc721/PublicCollection/PNDC.md
+              - "Auction": sdk/erc721/PublicCollection/PNDC.md
+              - "Bid": sdk/erc721/PublicCollection/PNDC.md
+              - "Execute": sdk/erc721/PublicCollection/PNDC.md
+              - "Withdraw": sdk/erc721/PublicCollection/PNDC.md
+              - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
