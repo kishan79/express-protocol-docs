@@ -59,6 +59,44 @@ nav:
               - "Execute": sdk/erc721/PublicCollection/PNDC.md
               - "Withdraw": sdk/erc721/PublicCollection/PNDC.md
               - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+  - "Protocol Smart Contracts":
+      - Overview: smart-conrtracts/1_Overview.md
+      - Architecture: smart-conrtracts/2_Architecture.md
+      - "ERC721":
+          - "Functions":
+              - "Overview": smart-conrtracts/erc721/3_Functions/3.1_Functions.md
+              - "Collection": smart-conrtracts/erc721/3_Functions/3.2_Collections.md
+              - "Mint": smart-conrtracts/erc721/3_Functions/3.3_Minting.md
+              - "BatchMint": smart-conrtracts/erc721/3_Functions/3.4_BatchMinting.md
+              - "Royalties": smart-conrtracts/erc721/3_Functions/3.5_Royalties.md
+              - "Sell": smart-conrtracts/erc721/3_Functions/3.6_Selling.md
+              - "Buy": smart-conrtracts/erc721/3_Functions/3.7_Buying.md
+              - "Auction": smart-conrtracts/erc721/3_Functions/3.8_Auctioning.md
+              - "Bid": smart-conrtracts/erc721/3_Functions/3.9_Bidding.md
+              - "CancelSale": smart-conrtracts/erc721/3_Functions/3.10_CancellingSale.md
+              - "BidOrderBook": smart-conrtracts/erc721/3_Functions/3.11_BidOrderBook.md
+          - "Structs":
+              - "Overview": smart-conrtracts/erc721/Structs/1_Structs.md
+              - "Share": smart-conrtracts/erc721/Structs/Share.md
+              - "RoyaltiesSet": smart-conrtracts/erc721/Structs/2_RoyaltiesSet.md
+              - "TokenMeta": smart-conrtracts/erc721/Structs/3_TokenMeta.md
+              - "BidOrder": smart-conrtracts/erc721/Structs/4_BidOrder.md
+      - "ERC1155":
+          - "Functions":
+              - "Overview": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Collection": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Mint": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "BatchMint": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Royalties": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Sell": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Buy": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Auction": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "Bid": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "CancelSale": smart-conrtracts/erc1155/4_Functions/dummy.md
+              - "BidOrderBook": smart-conrtracts/erc1155/4_Functions/dummy.md
+          - "Structs":
+              - "AllStructs": smart-conrtracts/erc1155/Structs/dummy.md
+      - "Contract deployment": smart-conrtracts/1_ContractsDeployment.md
 
 markdown_extensions:
   - attr_list
