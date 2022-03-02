@@ -1,6 +1,7 @@
+---
 ### Procedure to deploy contracts on local as well as public blockchains.
 
-→Clone the Repository [Modular-Contract]("https://github.com/Pandora-Finance/Modular-contract")
+→Clone the Repository [Modular-Contract](https://github.com/Pandora-Finance/Modular-contract)
 
 →Install the dependencies by running -
 
@@ -8,7 +9,7 @@
     npm install
 ```
 
----
+***
 
 ### For deployment on the local network:
 

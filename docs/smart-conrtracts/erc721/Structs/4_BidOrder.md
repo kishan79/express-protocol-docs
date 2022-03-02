@@ -2,6 +2,7 @@
 
 ```javascript
     struct BidOrder {
+        uint256 bidId;
         uint256 saleId;
         address sellerAddress;
         address buyerAddress;
@@ -9,6 +10,8 @@
         bool withdrawn;
     }
 ```
+
+**→bidId**: bid Id of item
 
 **→saleId**: Id of item on sale
 

@@ -1,6 +1,6 @@
 ## Installation
 
-SDK is written in Javascript. To use SDK, install it through npm
+SDK is written in Javascript. To use SDK, install it through [npm](https://www.npmjs.com/package/pandora-express)
 
 `npm install pandora-express`
 

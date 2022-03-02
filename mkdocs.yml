@@ -59,6 +59,7 @@ nav:
               - "Execute": sdk/erc721/PublicCollection/PNDC.md
               - "Withdraw": sdk/erc721/PublicCollection/PNDC.md
               - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+      - Pinata: sdk/pinata/1_UploadingToPinata.md
   - "Protocol Smart Contracts":
       - Overview: smart-conrtracts/1_Overview.md
       - Architecture: smart-conrtracts/2_Architecture.md
@@ -68,6 +69,7 @@ nav:
               - "Collection": smart-conrtracts/erc721/3_Functions/3.2_Collections.md
               - "Mint": smart-conrtracts/erc721/3_Functions/3.3_Minting.md
               - "BatchMint": smart-conrtracts/erc721/3_Functions/3.4_BatchMinting.md
+              - "Burn": smart-conrtracts/erc721/3_Functions/Burn.md
               - "Royalties": smart-conrtracts/erc721/3_Functions/3.5_Royalties.md
               - "Sell": smart-conrtracts/erc721/3_Functions/3.6_Selling.md
               - "Buy": smart-conrtracts/erc721/3_Functions/3.7_Buying.md

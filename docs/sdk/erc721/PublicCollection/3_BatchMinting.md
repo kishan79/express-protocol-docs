@@ -13,12 +13,12 @@ const result = await ExpressSDK.erc721.nft.batchMint(
 
 ```
     royalties are of the form: [ royaltyArrayForToken1,
-                                royaltyArrayForToken2,
-                                .
-                                .
-                                royaltyArrayForTokenN ]
+                                 royaltyArrayForToken2,
+                                 .
+                                 .
+                                 royaltyArrayForTokenN ]
 ```
 
-It emits the same events as by Mint for all N tokens where N is the total number of tokens minted through ***batchMint***.
+It emits the same events as by [Mint](/sdk/erc721/PublicCollection/2_Minting/) for all N tokens where N is the total number of tokens minted through ***batchMint***.
 
 ---

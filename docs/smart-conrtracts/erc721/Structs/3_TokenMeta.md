@@ -8,9 +8,9 @@
         uint256 price;
         bool directSale;
         bool bidSale;
+        bool status;
         uint256 bidStartTime;
         uint256 bidEndTime;
-        address mintedBy;
         address currentOwner;
     }
 ```
@@ -27,11 +27,11 @@
 
 **→bidSale**: item on bid sale or not
 
+**→status: status of item
+
 **→bidStartTime**: auction start time
 
 **→bidEndTime**: auction end time
-
-**→mintedBy**: address of minter
 
 **→currentOwner**: address of current owner
 

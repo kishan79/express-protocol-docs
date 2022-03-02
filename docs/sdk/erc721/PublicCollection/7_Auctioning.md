@@ -11,7 +11,7 @@ const result = await ExpressSDK.erc721.order.sellNFTByBid(
 );
 ```
 
-It emits the same event emitted by _sellNFT_ function i.e. **TokenMetaReturn.**
+It emits the same event emitted by [sellNFT](/sdk/erc721/PublicCollection/5_Selling/) function i.e. **TokenMetaReturn.**
 
 Items on auction sale can be bid by others using saleId.
 
