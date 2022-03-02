@@ -10,5 +10,3 @@ Things to add -
 
 - SDK erc1155 part
 - Smartcontract erc1155 part
-- pinata part
-- adding links(internal)
