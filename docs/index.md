@@ -14,4 +14,4 @@ These smart contracts have functionalities to mint, trade and auction tokens of 
 
 The SDK built on top of the Smart Contracts enable clients to use the Protocol's Smart Contracts functionalities without directly interacting with the blockchain and smart contracts.
 
-[Protocol SDK](/sdk/overview/){ .md-button }
+[Protocol SDK](sdk/overview.md){ .md-button }

@@ -27,7 +27,7 @@
 
 **→bidSale**: item on bid sale or not
 
-**→status: status of item
+**→status**: status of item
 
 **→bidStartTime**: auction start time
 
