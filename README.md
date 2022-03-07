@@ -9,4 +9,3 @@ To start the server on dev phase, clone the repository and in the root directory
 Things to add -
 
 - SDK erc1155 part
-- Smartcontract erc1155 part
