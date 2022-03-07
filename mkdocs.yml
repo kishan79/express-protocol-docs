@@ -1,108 +1,112 @@
 site_name: Express Protocol
 theme:
-  name: material
+    name: material
 nav:
-  - Home: index.md
-  - "Protocol SDK":
-      - Overview: sdk/overview.md
-      - "Getting Started": sdk/gettingStarted.md
-      - "SDK Functions":
-          - ERC721: sdk/SDKFunctions/erc721.md
-          - ERC1155: sdk/SDKFunctions/erc1155.md
-      - ERC721:
-          - "Public Collection":
-              - "Overview": sdk/erc721/PublicCollection/1_PNDC.md
-              - "Mint": sdk/erc721/PublicCollection/2_Minting.md
-              - "BatchMint": sdk/erc721/PublicCollection/3_BatchMinting.md
-              - "Burn": sdk/erc721/PublicCollection/4_Burning.md
-              - "Sell": sdk/erc721/PublicCollection/5_Selling.md
-              - "Buy": sdk/erc721/PublicCollection/6_Buying.md
-              - "Auction": sdk/erc721/PublicCollection/7_Auctioning.md
-              - "Bid": sdk/erc721/PublicCollection/8_Bidding.md
-              - "Execute Bid": sdk/erc721/PublicCollection/9_ExecutingBid.md
-              - "Withdraw Bid": sdk/erc721/PublicCollection/10_WithdrawBid.md
-              - "Cancel Sale": sdk/erc721/PublicCollection/11_CancellingSale.md
-          - "Personal Collection":
-              - "Create Collection": sdk/erc721/PersonalCollection/1_PersonalCollection.md
-              - "Mint": sdk/erc721/PersonalCollection/2_Minting.md
-              - "BatchMint": sdk/erc721/PersonalCollection/3_BatchMinting.md
-              - "Burn": sdk/erc721/PersonalCollection/4_Burning.md
-              - "Sell": sdk/erc721/PersonalCollection/5_Selling.md
-              - "Buy": sdk/erc721/PersonalCollection/6_Buying.md
-              - "Auction": sdk/erc721/PersonalCollection/7_Auctioning.md
-              - "Bid": sdk/erc721/PersonalCollection/8_Bidding.md
-              - "Execute": sdk/erc721/PersonalCollection/9_ExecutingBid.md
-              - "Withdraw": sdk/erc721/PersonalCollection/10_WithdrawingBid.md
-              - "Cancel Sale": sdk/erc721/PersonalCollection/11_CancellingSale.md
-      - ERC1155:
-          - "Public Collection":
-              - "Overview": sdk/erc721/PublicCollection/PNDC.md
-              - "Mint": sdk/erc721/PublicCollection/PNDC.md
-              - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
-              - "Burn": sdk/erc721/PublicCollection/PNDC.md
-              - "Sell": sdk/erc721/PublicCollection/PNDC.md
-              - "Buy": sdk/erc721/PublicCollection/PNDC.md
-              - "Auction": sdk/erc721/PublicCollection/PNDC.md
-              - "Bid": sdk/erc721/PublicCollection/PNDC.md
-              - "Execute Bid": sdk/erc721/PublicCollection/PNDC.md
-              - "Withdraw Bid": sdk/erc721/PublicCollection/PNDC.md
-              - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
-          - "Personal Collection":
-              - "Create Collection": sdk/erc721/PublicCollection/PNDC.md
-              - "Mint": sdk/erc721/PublicCollection/PNDC.md
-              - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
-              - "Burn": sdk/erc721/PublicCollection/PNDC.md
-              - "Sell": sdk/erc721/PublicCollection/PNDC.md
-              - "Buy": sdk/erc721/PublicCollection/PNDC.md
-              - "Auction": sdk/erc721/PublicCollection/PNDC.md
-              - "Bid": sdk/erc721/PublicCollection/PNDC.md
-              - "Execute": sdk/erc721/PublicCollection/PNDC.md
-              - "Withdraw": sdk/erc721/PublicCollection/PNDC.md
-              - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
-      - Pinata: sdk/pinata/1_UploadingToPinata.md
-  - "Protocol Smart Contracts":
-      - Overview: smart-conrtracts/1_Overview.md
-      - Architecture: smart-conrtracts/2_Architecture.md
-      - "ERC721":
-          - "Functions":
-              - "Overview": smart-conrtracts/erc721/3_Functions/3.1_Functions.md
-              - "Collection": smart-conrtracts/erc721/3_Functions/3.2_Collections.md
-              - "Mint": smart-conrtracts/erc721/3_Functions/3.3_Minting.md
-              - "BatchMint": smart-conrtracts/erc721/3_Functions/3.4_BatchMinting.md
-              - "Burn": smart-conrtracts/erc721/3_Functions/Burn.md
-              - "Royalties": smart-conrtracts/erc721/3_Functions/3.5_Royalties.md
-              - "Sell": smart-conrtracts/erc721/3_Functions/3.6_Selling.md
-              - "Buy": smart-conrtracts/erc721/3_Functions/3.7_Buying.md
-              - "Auction": smart-conrtracts/erc721/3_Functions/3.8_Auctioning.md
-              - "Bid": smart-conrtracts/erc721/3_Functions/3.9_Bidding.md
-              - "CancelSale": smart-conrtracts/erc721/3_Functions/3.10_CancellingSale.md
-              - "BidOrderBook": smart-conrtracts/erc721/3_Functions/3.11_BidOrderBook.md
-          - "Structs":
-              - "Overview": smart-conrtracts/erc721/Structs/1_Structs.md
-              - "Share": smart-conrtracts/erc721/Structs/Share.md
-              - "RoyaltiesSet": smart-conrtracts/erc721/Structs/2_RoyaltiesSet.md
-              - "TokenMeta": smart-conrtracts/erc721/Structs/3_TokenMeta.md
-              - "BidOrder": smart-conrtracts/erc721/Structs/4_BidOrder.md
-      - "ERC1155":
-          - "Functions":
-              - "Overview": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Collection": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Mint": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "BatchMint": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Royalties": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Sell": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Buy": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Auction": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "Bid": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "CancelSale": smart-conrtracts/erc1155/4_Functions/dummy.md
-              - "BidOrderBook": smart-conrtracts/erc1155/4_Functions/dummy.md
-          - "Structs":
-              - "AllStructs": smart-conrtracts/erc1155/Structs/dummy.md
-      - "Contract deployment": smart-conrtracts/1_ContractsDeployment.md
+    - Home: index.md
+    - "Protocol SDK":
+          - Overview: sdk/overview.md
+          - "Getting Started": sdk/gettingStarted.md
+          - "SDK Functions":
+                - ERC721: sdk/SDKFunctions/erc721.md
+                - ERC1155: sdk/SDKFunctions/erc1155.md
+          - ERC721:
+                - "Public Collection":
+                      - "Overview": sdk/erc721/PublicCollection/1_PNDC.md
+                      - "Mint": sdk/erc721/PublicCollection/2_Minting.md
+                      - "BatchMint": sdk/erc721/PublicCollection/3_BatchMinting.md
+                      - "Burn": sdk/erc721/PublicCollection/4_Burning.md
+                      - "Sell": sdk/erc721/PublicCollection/5_Selling.md
+                      - "Buy": sdk/erc721/PublicCollection/6_Buying.md
+                      - "Auction": sdk/erc721/PublicCollection/7_Auctioning.md
+                      - "Bid": sdk/erc721/PublicCollection/8_Bidding.md
+                      - "Execute Bid": sdk/erc721/PublicCollection/9_ExecutingBid.md
+                      - "Withdraw Bid": sdk/erc721/PublicCollection/10_WithdrawBid.md
+                      - "Cancel Sale": sdk/erc721/PublicCollection/11_CancellingSale.md
+                - "Personal Collection":
+                      - "Create Collection": sdk/erc721/PersonalCollection/1_PersonalCollection.md
+                      - "Mint": sdk/erc721/PersonalCollection/2_Minting.md
+                      - "BatchMint": sdk/erc721/PersonalCollection/3_BatchMinting.md
+                      - "Burn": sdk/erc721/PersonalCollection/4_Burning.md
+                      - "Sell": sdk/erc721/PersonalCollection/5_Selling.md
+                      - "Buy": sdk/erc721/PersonalCollection/6_Buying.md
+                      - "Auction": sdk/erc721/PersonalCollection/7_Auctioning.md
+                      - "Bid": sdk/erc721/PersonalCollection/8_Bidding.md
+                      - "Execute": sdk/erc721/PersonalCollection/9_ExecutingBid.md
+                      - "Withdraw": sdk/erc721/PersonalCollection/10_WithdrawingBid.md
+                      - "Cancel Sale": sdk/erc721/PersonalCollection/11_CancellingSale.md
+          - ERC1155:
+                - "Public Collection":
+                      - "Overview": sdk/erc721/PublicCollection/PNDC.md
+                      - "Mint": sdk/erc721/PublicCollection/PNDC.md
+                      - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
+                      - "Burn": sdk/erc721/PublicCollection/PNDC.md
+                      - "Sell": sdk/erc721/PublicCollection/PNDC.md
+                      - "Buy": sdk/erc721/PublicCollection/PNDC.md
+                      - "Auction": sdk/erc721/PublicCollection/PNDC.md
+                      - "Bid": sdk/erc721/PublicCollection/PNDC.md
+                      - "Execute Bid": sdk/erc721/PublicCollection/PNDC.md
+                      - "Withdraw Bid": sdk/erc721/PublicCollection/PNDC.md
+                      - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+                - "Personal Collection":
+                      - "Create Collection": sdk/erc721/PublicCollection/PNDC.md
+                      - "Mint": sdk/erc721/PublicCollection/PNDC.md
+                      - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
+                      - "Burn": sdk/erc721/PublicCollection/PNDC.md
+                      - "Sell": sdk/erc721/PublicCollection/PNDC.md
+                      - "Buy": sdk/erc721/PublicCollection/PNDC.md
+                      - "Auction": sdk/erc721/PublicCollection/PNDC.md
+                      - "Bid": sdk/erc721/PublicCollection/PNDC.md
+                      - "Execute": sdk/erc721/PublicCollection/PNDC.md
+                      - "Withdraw": sdk/erc721/PublicCollection/PNDC.md
+                      - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+          - Pinata: sdk/pinata/1_UploadingToPinata.md
+    - "Protocol Smart Contracts":
+          - Overview: smart-conrtracts/1_Overview.md
+          - Architecture: smart-conrtracts/2_Architecture.md
+          - "ERC721":
+                - "Functions":
+                      - "Overview": smart-conrtracts/erc721/3_Functions/3.1_Functions.md
+                      - "Collection": smart-conrtracts/erc721/3_Functions/3.2_Collections.md
+                      - "Mint": smart-conrtracts/erc721/3_Functions/3.3_Minting.md
+                      - "BatchMint": smart-conrtracts/erc721/3_Functions/3.4_BatchMinting.md
+                      - "Burn": smart-conrtracts/erc721/3_Functions/Burn.md
+                      - "Royalties": smart-conrtracts/erc721/3_Functions/3.5_Royalties.md
+                      - "Sell": smart-conrtracts/erc721/3_Functions/3.6_Selling.md
+                      - "Buy": smart-conrtracts/erc721/3_Functions/3.7_Buying.md
+                      - "Auction": smart-conrtracts/erc721/3_Functions/3.8_Auctioning.md
+                      - "Bid": smart-conrtracts/erc721/3_Functions/3.9_Bidding.md
+                      - "CancelSale": smart-conrtracts/erc721/3_Functions/3.10_CancellingSale.md
+                      - "BidOrderBook": smart-conrtracts/erc721/3_Functions/3.11_BidOrderBook.md
+                - "Structs":
+                      - "Overview": smart-conrtracts/erc721/Structs/1_Structs.md
+                      - "Share": smart-conrtracts/erc721/Structs/Share.md
+                      - "RoyaltiesSet": smart-conrtracts/erc721/Structs/2_RoyaltiesSet.md
+                      - "TokenMeta": smart-conrtracts/erc721/Structs/3_TokenMeta.md
+                      - "BidOrder": smart-conrtracts/erc721/Structs/4_BidOrder.md
+          - "ERC1155":
+                - "Functions":
+                      - "Overview": smart-conrtracts/erc1155/4_Functions/3.1_Functions.md
+                      - "Collection": smart-conrtracts/erc1155/4_Functions/3.2_Collections.md
+                      - "Mint": smart-conrtracts/erc1155/4_Functions/3.3_minting.md
+                      - "Burn": smart-conrtracts/erc1155/4_Functions/Burn.md
+                      - "Royalties": smart-conrtracts/erc1155/4_Functions/3.5_Royalties.md
+                      - "Sell": smart-conrtracts/erc1155/4_Functions/3.6_Selling.md
+                      - "Buy": smart-conrtracts/erc1155/4_Functions/3.7_Buying.md
+                      - "Auction": smart-conrtracts/erc1155/4_Functions/3.8_Auctioning.md
+                      - "Bid": smart-conrtracts/erc1155/4_Functions/3.9_Bidding.md
+                      - "CancelSale": smart-conrtracts/erc1155/4_Functions/3.10_CancellingSale.md
+                      - "BidOrderBook": smart-conrtracts/erc1155/4_Functions/3.11_BidOrderBook.md
+                - "Structs":
+                      - "Overview": smart-conrtracts/erc1155/Structs/1_Structs.md
+                      - "Share": smart-conrtracts/erc1155/Structs/Share.md
+                      - "RoyaltiesSet": smart-conrtracts/erc1155/Structs/2_RoyalitiesSet.md
+                      - "TokenMeta": smart-conrtracts/erc1155/Structs/3_TokenMeta.md
+                      - "BidOrder": smart-conrtracts/erc1155/Structs/4_BidOrder.md
+          - "Contract deployment": smart-conrtracts/1_ContractsDeployment.md
 
 markdown_extensions:
-  - attr_list
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+    - attr_list
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
