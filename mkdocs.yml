@@ -2,7 +2,8 @@ site_name: Express Protocol
 theme:
     name: material
 nav:
-    - Home: index.md
+    - Overview: index.md
+    - "Why Express?": express.md
     - "Protocol SDK":
           - Overview: sdk/overview.md
           - "Getting Started": sdk/gettingStarted.md
