@@ -1,6 +1,6 @@
 site_name: Express Protocol
 theme:
-    name: material
+    name: mkdocs
 nav:
     - Overview: index.md
     - "Why Express?": express.md
@@ -37,8 +37,8 @@ nav:
                       - "Cancel Sale": sdk/erc721/PersonalCollection/11_CancellingSale.md
           - ERC1155:
                 - "Public Collection":
-                      - "Overview": sdk/erc721/PublicCollection/PNDC.md
-                      - "Mint": sdk/erc721/PublicCollection/PNDC.md
+                      - "Overview": sdk/erc1155/PublicCollection/1_PNDC.md
+                      - "Mint": sdk/erc1155/PublicCollection/2_Minting.md
                       - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
                       - "Burn": sdk/erc721/PublicCollection/PNDC.md
                       - "Sell": sdk/erc721/PublicCollection/PNDC.md
