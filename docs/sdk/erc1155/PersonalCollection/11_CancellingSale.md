@@ -9,6 +9,6 @@ const result = await ExpressSDK.erc1155.collection.cancelSale(
 );
 ```
 
-After the successful execution of this function, the item that was on direct sale or auction sale will be removed from sale.
+After the successful execution of this function, the item that was on direct sale or auction sale will be removed from sale
 
 ---
