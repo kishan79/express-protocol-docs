@@ -39,27 +39,25 @@ nav:
                 - "Public Collection":
                       - "Overview": sdk/erc1155/PublicCollection/1_PNDC.md
                       - "Mint": sdk/erc1155/PublicCollection/2_Minting.md
-                      - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
-                      - "Burn": sdk/erc721/PublicCollection/PNDC.md
-                      - "Sell": sdk/erc721/PublicCollection/PNDC.md
-                      - "Buy": sdk/erc721/PublicCollection/PNDC.md
-                      - "Auction": sdk/erc721/PublicCollection/PNDC.md
-                      - "Bid": sdk/erc721/PublicCollection/PNDC.md
-                      - "Execute Bid": sdk/erc721/PublicCollection/PNDC.md
-                      - "Withdraw Bid": sdk/erc721/PublicCollection/PNDC.md
-                      - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+                      - "Burn": sdk/erc721/PublicCollection/3_Burning.md
+                      - "Sell": sdk/erc1155/PublicCollection/4_Selling.md
+                      - "Buy": sdk/erc1155/PublicCollection/5_Buying.md
+                      - "Auction": sdk/erc1155/PublicCollection/6_Auctioning.md
+                      - "Bid": sdk/erc1155/PublicCollection/7_Bidding.md
+                      - "Execute Bid": sdk/erc1155/PublicCollection/8_ExcecutingBid.md
+                      - "Withdraw Bid": sdk/erc1155/PublicCollection/9_WithdrawingBid.md
+                      - "Cancel Sale": sdk/erc1155/PublicCollection/10_CancellingSale.md
                 - "Personal Collection":
-                      - "Create Collection": sdk/erc721/PublicCollection/PNDC.md
-                      - "Mint": sdk/erc721/PublicCollection/PNDC.md
-                      - "BatchMint": sdk/erc721/PublicCollection/PNDC.md
-                      - "Burn": sdk/erc721/PublicCollection/PNDC.md
-                      - "Sell": sdk/erc721/PublicCollection/PNDC.md
-                      - "Buy": sdk/erc721/PublicCollection/PNDC.md
-                      - "Auction": sdk/erc721/PublicCollection/PNDC.md
-                      - "Bid": sdk/erc721/PublicCollection/PNDC.md
-                      - "Execute": sdk/erc721/PublicCollection/PNDC.md
-                      - "Withdraw": sdk/erc721/PublicCollection/PNDC.md
-                      - "Cancel Sale": sdk/erc721/PublicCollection/PNDC.md
+                      - "Create Collection": sdk/erc1155/PersonalCollection/1_PersonalCollection.md
+                      - "Mint": sdk/erc1155/PersonalCollection/2_Minting.md
+                      - "Burn": sdk/erc1155/PersonalCollection/3_Burning.md
+                      - "Sell": sdk/erc1155/PersonalCollection/4_Selling.md
+                      - "Buy": sdk/erc1155/PersonalCollection/6_Buying.md
+                      - "Auction": sdk/erc1155/PersonalCollection/7_Auctioning.md
+                      - "Bid": sdk/erc1155/PersonalCollection/8_Bidding.md
+                      - "Execute": sdk/erc1155/PersonalCollection/9_ExecutingBid.md
+                      - "Withdraw": sdk/erc1155/PersonalCollection/10_WithdrawingBid.md
+                      - "Cancel Sale": sdk/erc1155/PersonalCollection/11_CancellingSale.md
           - Pinata: sdk/pinata/1_UploadingToPinata.md
     - "Protocol Smart Contracts":
           - Overview: smart-conrtracts/1_Overview.md
