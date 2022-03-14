@@ -102,7 +102,8 @@ nav:
                               - "TokenMeta": smart-conrtracts/erc1155/Structs/3_TokenMeta.md
                               - "BidOrder": smart-conrtracts/erc1155/Structs/4_BidOrder.md
               - "Contract deployment": smart-conrtracts/1_ContractsDeployment.md
-      - "SDK Usecases": guide.md
+      - "SDK Usecases": 
+                NFT MarketPlace: guide.md
 markdown_extensions:
       - attr_list
       - pymdownx.highlight
