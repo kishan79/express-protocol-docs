@@ -4,7 +4,6 @@ theme:
 nav:
       - Overview: index.md
       - "Why Express?": express.md
-      - "Developer's Guide": guide.md
       - "Protocol SDK":
               - Overview: sdk/overview.md
               - "Getting Started": sdk/gettingStarted.md
@@ -103,7 +102,7 @@ nav:
                               - "TokenMeta": smart-conrtracts/erc1155/Structs/3_TokenMeta.md
                               - "BidOrder": smart-conrtracts/erc1155/Structs/4_BidOrder.md
               - "Contract deployment": smart-conrtracts/1_ContractsDeployment.md
-
+      - "SDK Usecases": guide.md
 markdown_extensions:
       - attr_list
       - pymdownx.highlight
