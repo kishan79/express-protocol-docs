@@ -1,9 +1,6 @@
 ***
 
 ### Create NFT Marketplace using Pandora-express SDK
-<!-- CREATE NFT MARKETPLACE USING PANDORA-EXPRESS SDK : -->
-
- Make your own NFT marketplace for trading NFTs.
 
 ### Intro
 
@@ -12,6 +9,11 @@
   You also need to connect a wallet, so make sure you have metamask wallet installed.
 
   Alright without further ado, let's create our marketplace!
+
+### Prerequisites
+#### Some Prequisites required before building the project:
+    NodeJS version > 16.0.0
+    NPM version > 6.0.0
 
 ### Code
 
