@@ -1,11 +1,7 @@
 # express-protocol-docs
 
-Refer Mkdocs : https://www.mkdocs.org/getting-started/
+Express Protocol Docs : https://damp-salad-1541.on.fleek.co/index.html
 
 To start the server on dev phase, clone the repository and in the root directory run :
 
 `mkdocs serve`
-
-Things to add -
-
-- SDK erc1155 part
