@@ -106,6 +106,7 @@ nav:
               - "Contract deployment": smart-conrtracts/1_ContractsDeployment.md
       - "SDK Usecases": 
                 NFT MarketPlace: guide.md
+                NFT Auction Market: guide1.md
 markdown_extensions:
       - attr_list
       - pymdownx.highlight
