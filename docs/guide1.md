@@ -4,7 +4,7 @@
 
 ### Intro
 
-  In this guide we will make NFT marketplace Dapp using Express Protocol SDK through which anyone can Mint, Auctions and and buyers can Bid on tokens.
+  In this guide we will make NFT marketplace Dapp using Express Protocol SDK through which anyone can Mint NFTs, Auction them and buyers can Bid on tokens.
   We will use Pandora Public ERC721 contract for NFT minting and Pandora Market Contract for Auctioning/Bidding of NFTs.
   You also need to connect a wallet, so make sure you have metamask wallet installed.
 
@@ -225,7 +225,7 @@ const auctionNft = async () => {
 }
 ```
 
-After putting the item on Auction, anyone can Bid on the Token by providing price more than the base price of the Token.<br>
+After putting the item on Auction, anyone can Bid on the Token by providing price more than the base price of the Token or price more than the previous highest Bid.<br>
 We can implement the Bid function in our App using the PandoraSDK.erc721.order.bid function.
 
 ```javascript
@@ -254,14 +254,14 @@ const executeBid = async () => {
   await pandoraSDK.erc721.order.acceptBid(
     web3,
     chainId,
-    ExecuteSaleId.value, //Sale ID of the Auction
+    ExecuteSaleId.value, //Sale ID of the token on Auction
     ExecuteBidId.value, //Bid ID of the Bid offering
     accounts[0]
   );
 };
 ```
 
-After Auction is over and if the Bidder's bid is not accepted then they can withdraw their ether.<br>
+After Auction is over and if the Bidder's bid is not accepted then they can withdraw their bids.<br>
 We will use pandoraSDK.erc721.order.withdrawBid() function to implement this.
 
 ```javascript
