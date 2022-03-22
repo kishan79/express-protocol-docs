@@ -14,6 +14,7 @@
 #### Some Prequisites required before building the project:
     NodeJS version > 16.0.0
     NPM version > 6.0.0
+    Metamask Browser Extension
 
 ### Code
 
@@ -161,6 +162,7 @@
 
 ```
 
+Now run the app with live server<br>
 As we have pasted the code, Now our frontend will look something like this:
 
 ![Screenshot](/media/html1.png)
@@ -294,6 +296,55 @@ const cancelSale = async () => {
     CancelSaleId.value
   );
 }
+```
+
+**5.Getting Data from User from Frontend**
+
+Now as we defined the functions for our Dapp, the last step is to get the function parameters using javascript DOM.
+
+Paste the code written below to main.js.
+
+```javascript
+const itemURI = document.getElementById("txtCreateItemURI");
+
+const createItemButton = document.getElementById("btnCreateItem");
+createItemButton.onclick = mintNft;
+
+const itemURI1 = document.getElementById("txtCreateItemURI1");
+const itemURI2 = document.getElementById("txtCreateItemURI2");
+
+const auctionItemTokenId = document.getElementById("numAuctionItemTokenId");
+const auctionItemPrice = document.getElementById("numAuctionItemPrice");
+const auctionItemTime = document.getElementById("numAuctionItemTime");
+
+const auctionItemButton = document.getElementById("btnAuctionItem");
+auctionItemButton.onclick = auctionNft;
+
+const BidItemSaleId = document.getElementById("numBidItemSaleId");
+const BidItemPrice = document.getElementById("numBidItemPrice");
+
+const BidItemButton = document.getElementById("btnBidItem");
+BidItemButton.onclick = bid;
+
+const ExecuteSaleId = document.getElementById("numExecuteSaleId");
+const ExecuteBidId = document.getElementById("numExecuteBidId");
+
+const ExecuteBidItemButton = document.getElementById("btnExecuteBidItem");
+ExecuteBidItemButton.onclick = executeBid;
+
+const WithdrawSaleId = document.getElementById("numWithdrawSaleId");
+const WithdrawBidId = document.getElementById("numWithdrawBidId");
+
+const WithdrawBidItemButton = document.getElementById("btnWithdrawBidItem");
+WithdrawBidItemButton.onclick = withdrawBidMoney;
+
+const CancelSaleId = document.getElementById("numCancelSaleId");
+
+const CancelItemSaleButton = document.getElementById("btnCancelItemSale");
+CancelItemSaleButton.onclick = cancelSale;
+
+init();
+
 ```
 
 **All Set!**

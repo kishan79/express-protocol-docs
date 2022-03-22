@@ -14,6 +14,7 @@
 #### Some Prequisites required before building the project:
     NodeJS version > 16.0.0
     NPM version > 6.0.0
+    Metamask Browser Extension
 
 ### Code
 
@@ -109,6 +110,7 @@
 </html>
 ```
 
+Now run the app with live server. <br>
 As we have pasted the code, now our frontend will look something like this:
 
 ![Screenshot](/media/html.png)

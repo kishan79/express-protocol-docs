@@ -107,6 +107,7 @@ nav:
       - "SDK Usecases": 
                 NFT MarketPlace: guide.md
                 NFT Auction Market: guide1.md
+                NFT-Drop Dapp: guide2.md
 markdown_extensions:
       - attr_list
       - pymdownx.highlight
