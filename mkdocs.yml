@@ -108,6 +108,7 @@ nav:
                 NFT MarketPlace: guide.md
                 NFT Auction Market: guide1.md
                 NFT-Drop Dapp: guide2.md
+                NFT-Ticket Dapp: guide3.md
 markdown_extensions:
       - attr_list
       - pymdownx.highlight
