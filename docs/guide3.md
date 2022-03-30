@@ -21,7 +21,7 @@
   **1.Creating Project:**
 
   Create an empty folder in your favourite editor. We will use VScode here.
-
+  We will use Parcel for bundling the javascript code.
 
   **2.SDK installation** 
       
@@ -29,7 +29,7 @@
 
   ```bash
   npm init 
-  npm i pandora-express 
+  npm i pandora-express parcel
   ``` 
   ![Screenshot](/media/pandora-install.png)
 
@@ -47,151 +47,104 @@
     <title>SDK</title>
   </head>
   <body>
-    <h1>NFT Ticket</h1>
-    <div id="createItem">
-      <h4>Create Event</h4>
+    <h1>NFT Ticket Booking</h1>
+    <div id="Collection1155">
+      <h4>Create Event(Collection)</h4>
       <input
         type="text"
-        id="txtCreateItemURI"
+        id="collection1155Uri"
         required
-        placeholder="Enter BaseURI"
+        placeholder="Enter Collection URI"
       />
-      <input 
+      <input
         type="text"
-        id="desc"
+        id="collection1155Description"
         required
-        placeholder="Enter Description of Ticket"
+        placeholder="Enter collection Description"
       />
       <input
         type="number"
-        id="collectionRoyalties"
+        id="collection1155Royalties"
         required
         placeholder="Enter collection Royalties"
       />
 
-      <button id="btnCreateItem">Create Event</button>
+      <button id="btnCreateCollection1155">Create Collection</button>
     </div>
 
-    <div id="mintTickets">
-      <h4>Mint Event Tickets</h4>
+    <div id="mintInCollection1155">
+      <h4>Mint Tickets(Tokens)</h4>
       <input
         type="text"
-        id="collectionAddress"
+        id="collection1155Address"
         required
         placeholder="Enter collection Address"
       />
-      <input type="number" id="tokenId" required placeholder="Enter TicketID" />
-      <input type="number" id="tokenAmount" required placeholder="Enter Ticket Amount" />
-      <input type="text" id="tokenURI" required placeholder="Enter TicketURI" />
-      <input type="text" id="minterAddress" required placeholder="Enter Your Address" />
-
-      <button id="btnMintInCollection">Mint Tickets</button>
-    </div>
-
-    <div id="sellInCollection">
-      <h4>Sell Events Tickets</h4>
       <input
         type="text"
-        id="sellCollectionAddress"
+        id="token1155Id"
+        required
+        placeholder="Enter TokenId"
+      />
+      <input
+        type="text"
+        id="token1155URI"
+        required
+        placeholder="Enter TokenURI"
+      />
+      <input
+        type="number"
+        id="numMintInCol1155Amount"
+        required
+        placeholder="Enter Amount of Tokens"
+      />
+
+      <button id="btnMintInCollection1155">Mint in collection</button>
+    </div>
+
+    <div id="sellInCollection1155">
+      <h4>Sell Tickets(Tokens)</h4>
+      <input
+        type="text"
+        id="sellCollection1155Address"
         required
         placeholder="Enter collection Address"
       />
       <input
         type="number"
-        id="sellTokenId"
+        id="sell1155TokenId"
         required
         placeholder="Enter TokenId"
       />
-      <input type="number" id="price" required placeholder="Enter Price" />
-      <input type="text" id="seller" required placeholder="Enter Your Address" />
-      <input type="number" id="sellAmount" required placeholder="Enter Ticket Amount to sell" />
-      <button id="btnSellInCollection">Sell Tickets</button>
+      <input
+        type="number"
+        id="sell1155Price"
+        required
+        placeholder="Enter Price"
+      />
+      <input
+        type="number"
+        id="numSellInCol1155Amount"
+        required
+        placeholder="Enter Amount of Tokens"
+      />
+
+      <button id="btnSellInCollection1155">Sell in collection</button>
     </div>
 
-     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
+
 ```
-
-Now run the app with live server<br>
-As we have pasted the code, now our frontend will look something like this:
-
+Now run in terminal
+```bash
+parcel index.html
+```
+Our HTML page will look something like this.
 ![Screenshot](/media/html3.png)
-
-**4.Using SDK code with our javascript Logic**
-
-  Make a Javascript file, name it main.js, 
-  Now we have to import SDK function in our Dapp and make connection with blockchain using metamask.
-  Paste the code below in main.js file.
-
-```javascript
-  //Import createPandoraExpressSDK from SDK
-  const { createPandoraExpressSDK } = require("pandora-express");
-  const pandoraSDK = createPandoraExpressSDK();
-
-  //Connecting with Metamask wallet.
-  const init = async () => {
-  //check if metamask is present
-    if (window.ethereum) {
-      window.web3 = new Web3(window.ethereum);
-      await window.ethereum.enable();
-      console.log("Connected");
-    } else {
-      alert("Metamask not found");
-    }
-  };
-
-```
-
-Now we can start with our createCollection function which will create a new contract ie.. event, in which we can later mint tickets.
-We will use pandoraSDK.erc1155.collection.createCollection() for implememting the above functionality.
-```javascript
-const createCollection = async () => {
-  const accounts = await web3.eth.getAccounts();
-  const chainId = await web3.eth.net.getId();
-  await pandoraSDK.erc1155.collection.createCollection(
-      web3,
-      chainId, 
-      accounts[0], 
-      itemURI, //Base URI of Event Data
-      description, //Description of Event
-      royalties //Royalities of Ticket
-    )
-}
-```
-
-After creating the Event, the owner can mint any amount of Ticket he/she want using pandoraSDK.erc1155.collection.mint() function
-```javascript
-const batchMint1155Nft = async () => {
-  const accounts = await web3.eth.getAccounts();
-  const chainId = await web3.eth.net.getId();
-  await pandoraSDK.erc1155.collection.mint(
-      web3, 
-      collectionAddress, 
-      tokenId, //ID of Ticket
-      tokenAmount, //Amount of Ticket to be minted
-      tokenURI, //URI of Event data
-      minter //Event Owner Address
-      );
-}
-```
-Event Owner can sell their Tickets in the marketplace using the pandoraSDK.erc1155.collection.sellNFT function.
-```javascript
-const sell1155Nft = async () => {
-  const accounts = await web3.eth.getAccounts();
-  const chainId = await web3.eth.net.getId();
-  await pandoraSDK.erc1155.collection.sellNFT(
-    web3, 
-    chainId,
-    sellCollectionAddress, //Collection Address
-    sellTokenId, //TokenID
-    price, // Base Price of Ticket
-    sellerAddress, // Seller Address
-    sellAmount //Amount of Ticket to sell
-  );
-}
-```
 
 **5.Getting Data from User from Frontend**
 
@@ -201,27 +154,87 @@ Paste the code written below to main.js.
 
 
 ```javascript
-const itemURI = document.getElementById("txtCreateItemURI");
-const description = document.getElementById("desc");
-const royalties = document.getElementById("collectionRoyalties");
-const createBtn = document.getElementById("btnCreateItem");
-createBtn.onclick = createCollection
+const { createPandoraExpressSDK } = require("pandora-express");
 
-const collectionAddress = document.getElementById("collectionAddress")
-const tokenId = document.getElementById("tokenId");
-const tokenAmount = document.getElementById("tokenAmount");
-const tokenURI = document.getElementById("tokenURI");
-const minter = document.getElementById("minterAddress");
-const mintBtn = document.getElementById("btnMintInCollection");
-mintBtn.onclick = batchMint1155Nft;
+init = async () => {
+  if (window.ethereum) {
+    window.web3 = new Web3(window.ethereum);
+    await window.ethereum.enable();
+    console.log("Connected");
+  } else {
+    alert("Metamask not found");
+  }
+};
 
-const sellTokenId = document.getElementById("sellTokenId");
-const sellCollectionAddress = document.getElementById("sellCollectionAddress");
-const price = document.getElementById("price");
-const sellerAddress = document.getElementById("seller");
-const sellAmount = document.getElementById("sellAmount");
-const sellBtn = document.getElementById("btnSellInCollection");
-sellBtn.onclick = sell1155Nft;
+createCollection = async () => {
+  let ExpressSDK = createPandoraExpressSDK();
+  const accounts = await web3.eth.getAccounts();
+  const chainId = await web3.eth.net.getId();
+  console.log(chainId);
+ const result = await ExpressSDK.erc1155.collection.createCollection(
+    web3,
+    chainId,
+    accounts[0],
+    collectionURI.value,
+    collectionDescription.value,
+    [[accounts[0], collectionRoyalties.value]]
+  );
+
+  console.log(result);
+};
+
+mintInCollection = async () => {
+  let ExpressSDK = createPandoraExpressSDK();
+  const accounts = await web3.eth.getAccounts();
+  const chainId = await web3.eth.net.getId();
+  console.log(chainId);
+ const result = await ExpressSDK.erc1155.collection.mint(
+    web3,
+    collectionAddress.value,
+    tokenID.value,
+    itemColNumber.value,
+    tokenURI.value,
+    accounts[0]
+  );
+  console.log(result)
+};
+
+sellInCollection = async () => {
+  let ExpressSDK = createPandoraExpressSDK();
+  const accounts = await web3.eth.getAccounts();
+  const chainId = await web3.eth.net.getId();
+  console.log(chainId);
+  const result = await ExpressSDK.erc1155.collection.sellNFT(
+    web3,
+    chainId,
+    sellCollectionAddress.value,
+    sellTokenId.value,
+    sellPrice.value,
+    accounts[0],
+    itemSellNumber.value
+  );
+  console.log(result)
+};
+
+const collectionURI = document.getElementById("collection1155Uri");
+const collectionDescription = document.getElementById("collection1155Description");
+const collectionRoyalties = document.getElementById("collection1155Royalties");
+const CollectionButton = document.getElementById("btnCreateCollection1155");
+CollectionButton.onclick = createCollection;
+
+const collectionAddress = document.getElementById("collection1155Address");
+const tokenURI = document.getElementById("token1155URI");
+const tokenID = document.getElementById("token1155Id");
+const itemColNumber = document.getElementById("numMintInCol1155Amount");
+const btnMintInCollection = document.getElementById("btnMintInCollection1155");
+btnMintInCollection.onclick = mintInCollection;
+
+const sellCollectionAddress = document.getElementById("sellCollection1155Address");
+const sellTokenId = document.getElementById("sell1155TokenId");
+const sellPrice = document.getElementById("sell1155Price");
+const itemSellNumber = document.getElementById("numSellInCol1155Amount");
+const btnSellInCollection = document.getElementById("btnSellInCollection1155");
+btnSellInCollection.onclick = sellInCollection;
 
 init();
 ```
