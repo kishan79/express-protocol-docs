@@ -35,7 +35,12 @@
 
   **3.Building the UI**
 
-   Make a index.html file and paste the following code.
+   Make a index.html file and paste the following code.<br>
+   Here we have made five sections for the frontend, first one we have the create item section, in which any user can mint NFT. Then we have auction section in which user can put their NFT on auction, it has three fields, one for token ID, one for setting Base price of NFT and next for time span in which the auction will end.
+   <br>
+   Then we have next section for user who want to Bid on the auctioned NFT, user have to enter the sale ID and the Bid offer he want to make for the NFT. Next we have execute Bid section through which the NFT owner can accept the bid made by the bidders, we have two fields for the Sale ID and Bid ID.<br>
+   Next their is withdraw bid section, by which bidders can withdraw the bid they have made, bidders have to pass the sale ID and Bid ID in the fields present.<br>
+   At last their is the cancel sale section, NFT owner can cancel the auction of their NFT. User have to enter only the Sale ID.
 
 ```html
 <!DOCTYPE html>
