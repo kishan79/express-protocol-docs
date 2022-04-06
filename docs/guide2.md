@@ -36,7 +36,10 @@
 
   **3.Building the UI**
 
-   Make a index.html file and paste the following code.
+   Make a index.html file and paste the following code. <br>
+   We have made three section here, first is for creating the collection ie.. creating the smart contract for the NFT collection, user will have to fill the input fields for Collection's Name, Symbol, Description and royalities.<br>
+   Now their is NFT ticket minting section, in technical terms Collection owner can mint ERC1155 token in the smart contract they have made earlier, For this we have three input fields in which owner should enter the Collection address, Token's URI and the royalities that has to be shared with other people. <br>
+   Now the Owner have to sell the NFT Tickets in the market, so their is a sell ticket function which takes Collection address, TokenID and Price of the token as input.
 
 ```html
 <!DOCTYPE html>

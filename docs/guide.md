@@ -35,7 +35,8 @@
 
   **3.Building the UI**
 
-   Make a index.html file and paste the following code.
+   Make a index.html file and paste the following code.<br>
+   Here we will make three input fields, User have to enter the tokenURI in the first field that will create an NFT for that user. Next section will take token's ID that the user have created previously and the base price in which the user want to sell his NFT, this will put the NFT on sale. Followed by the last section in which the the NFT buyer can buy the NFT by providing the Sale ID of the NFT and the amount he want to offer.
 
 ```html
 <!DOCTYPE html>
