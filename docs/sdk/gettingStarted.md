@@ -4,8 +4,11 @@ SDK is written in Javascript. To use SDK, install it through [npm](https://www.n
 
 `npm install pandora-express`
 
-After installation, SDK can be initialized
+After installation, SDK can be initialized<br>
+![](/media/folder.png){: style="height:300px;width:200px"}
 
+
+In the main.js file, Paste the following code, this will initialize PandoraExpressSDK
 ```javascript
 import { createPandoraExpressSDK } from "pandora-express";
 const ExpressSDK = createPandoraExpressSDK();
