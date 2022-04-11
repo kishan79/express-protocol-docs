@@ -10,7 +10,6 @@ Minted NFTs can be burned by the owner using burn function of both PNDC_ERC1155 
 
 ```
 
-- **\_from**: Owner of Token
 - **\_id**: ID of Token
 - **\_amount**: Amount of Token to burn
 

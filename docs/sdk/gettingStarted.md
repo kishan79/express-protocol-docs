@@ -14,6 +14,8 @@ import { createPandoraExpressSDK } from "pandora-express";
 const ExpressSDK = createPandoraExpressSDK();
 ```
 
+For further usage of SDK with frontend, you can refer to [SDK-Usecases section](../guide.md)
+
 ---
 
 ## Usage
