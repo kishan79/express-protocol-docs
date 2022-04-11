@@ -4,7 +4,6 @@ Minted NFTs can be burned by the owner using burn function of both PNDC_ERC1155 
 
 ```javascript
     burn(
-        address _from,
         uint256 _id, 
         uint256 _amount
         ) 
