@@ -8,4 +8,4 @@ Currently, The SDK operates on these networks:
 
 With Express Protocol SDK, any user can deploy ERC721 and ERC1155 contracts and mint, trade and auction NFTs without diving deep into the smart contract source code.
 
-All the ERC721 SDK functions can be quickly looked at [here](/sdk/SDKFunctions/erc721.md).
+All the ERC721 SDK functions can be quickly looked at [here](./SDKFunctions/erc721.md).
