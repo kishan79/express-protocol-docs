@@ -37,6 +37,8 @@
 
 ```
     PK = <PRIVATE_KEY>
+    INFURA_API = <YOUR INFURA API>
+    BSC_API = <BINANCE API>
 ```
 
 →For compiling and deploying on the public test blockchain, run -
