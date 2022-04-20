@@ -15,6 +15,7 @@
     NodeJS version > 16.0.0
     NPM version > 6.0.0
     Metamask Browser Extension
+    Parcel Bundler(For bundling Javascript)
 
 ### Code
 
@@ -350,6 +351,11 @@ CancelItemSaleButton.onclick = cancelSale;
 
 init();
 
+```
+
+Now run in terminal
+```bash
+npx parcel index.html
 ```
 
 **All Set!**
