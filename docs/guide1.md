@@ -356,7 +356,7 @@ init();
 
 Now run in terminal
 ```bash
-npx parcel index.html
+parcel index.html
 ```
 
 **All Set!**
