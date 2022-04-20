@@ -15,6 +15,7 @@
     NodeJS version > 16.0.0
     NPM version > 6.0.0
     Metamask Browser Extension
+    Parcel Bundler(For bundling Javascript)
 
 ### Code
 
@@ -30,6 +31,7 @@
   ```bash
   npm init 
   npm i pandora-express 
+  npm install -g parcel-bundler
   ``` 
   ![Screenshot](/media/pandora-install.png)
 
@@ -234,6 +236,11 @@ const buyItemButton = document.getElementById("btnBuyItem");
 buyItemButton.onclick = buyNft;
 
 init();
+```
+
+Now run in terminal
+```bash
+parcel index.html
 ```
 
  **That's it!**

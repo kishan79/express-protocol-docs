@@ -15,6 +15,7 @@
     NodeJS version > 16.0.0
     NPM version > 6.0.0
     Metamask Browser Extension
+    Parcel Bundler(For bundling Javascript)
 
 ### Code
 
@@ -30,6 +31,7 @@
   ```bash
   npm init 
   npm i pandora-express parcel
+  npm install -g parcel-bundler 
   ``` 
   ![Screenshot](/media/pandora-install.png)
 
@@ -137,13 +139,12 @@
     <script src="main.js"></script>
   </body>
 </html>
+```
 
-```
-Now run in terminal
-```bash
-parcel index.html
-```
-Our HTML page will look something like this.
+
+Now run the app with live server<br>
+As we have pasted the code, now our frontend will look something like this:
+
 ![Screenshot](/media/html3.png)
 
 **5.Getting Data from User from Frontend**
@@ -237,6 +238,11 @@ const btnSellInCollection = document.getElementById("btnSellInCollection1155");
 btnSellInCollection.onclick = sellInCollection;
 
 init();
+```
+
+Now run in terminal
+```bash
+parcel index.html
 ```
 
 **That's it!**
