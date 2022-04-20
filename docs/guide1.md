@@ -31,6 +31,7 @@
   ```bash
   npm init 
   npm i pandora-express 
+  npm install -g parcel-bundler
   ``` 
   ![Screenshot](/media/pandora-install.png)
 
