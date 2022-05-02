@@ -109,6 +109,7 @@ nav:
                 NFT Auction Market: guide1.md
                 NFT-Drop Dapp: guide2.md
                 NFT-Ticket Booking Dapp: guide3.md
+                NFT-Lending and Borrowing Dapp: guide4.md
 markdown_extensions:
       - attr_list
       - pymdownx.highlight
