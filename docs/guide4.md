@@ -28,11 +28,12 @@
       
   Run in terminal
 
-  ```bash
+```bash
   npm init 
   npm i pandora-express 
   npm install -g parcel-bundler
-  ``` 
+``` 
+
   ![Screenshot](/media/pandora-install.png)
 
   **3.Building the UI**
@@ -132,8 +133,7 @@ As we have pasted the code, now our frontend will look something like this:
   Now we have to import SDK function in our Dapp and add Mint function and make connection with blockchain using metamask.
   Paste the code below in main.js file.
 
-  ```javascript
-
+```javascript
 //Import createPandoraExpressSDK from SDK
   const { createPandoraExpressSDK } = require("pandora-express");
   const pandoraSDK = createPandoraExpressSDK();
@@ -149,7 +149,10 @@ As we have pasted the code, now our frontend will look something like this:
     [accounts[0], 100],
   ]);
 }
+```
 
+
+```javascript
 const itemURI = document.getElementById("mintNFT");
 
 const createItemButton = document.getElementById("mintBtn");
@@ -170,19 +173,15 @@ const init = async () => {
   }
   };
 
-// const erc721ContractAddress = "0x4e38b962783233d82fc8463C0198B240A8a04785";
-// const userAddress = "0xe18B1dFb94BB3CEC3B47663F997D824D9cD0f4D2";
-// const tokenIdNFT = 17;
 const nftContractAddress = document.getElementById("nftContractAddress");
 const tokenId = document.getElementById("nftTokenId")
-
-
-  ```  
+```  
 
   We have minted a NFT using the SDK now, we can approove the NFT by using approveNFT function of the SDK.
   Define the approveNFT function as written below.
 
-  ```javascript
+
+```javascript
   approveNFT = async () => {
    const web3 = new Web3(window.ethereum);
    const accounts = await web3.eth.getAccounts();
@@ -203,14 +202,14 @@ const tokenId = document.getElementById("nftTokenId")
       .catch((err) => {
         console.log(err);
       });
-   
 };
-  ```
+```
 
   We have approved the NFT!!, now that NFT contract address has been approved now it can have access to Lending and Borrowing.
 
   now you can creat a loan by createLoan function that will creat a loan on the NFT contract address.<br>
   Try pasting the code below for Creating a Loan.
+
 
 ```javascript
 createLoan = async () => {
@@ -234,8 +233,8 @@ createLoan = async () => {
         console.log(err);
       });
 };
-
 ```
+
 Now we have created a loan which takes NFT Contract address, NFT Token id, Loan Amount(in wei), Intrest Amount(in wei), Time Period(in days), Max time period(in days).
 
 For Lender to accept the Loan we need to use acceptLoan function.
@@ -267,6 +266,7 @@ Now if borrower wants to end the loan before the period he can use endLoan funct
 we need to add endLoan function to our main.ja file.
 Try pasting the code below to end the Loan.
 
+
 ```javascript
 endLoan = async () => {
   const web3 = new Web3(window.ethereum);
@@ -287,8 +287,10 @@ endLoan = async () => {
 
 }
 ```
+
 Now when we creat a lone we need to enter "MAX Time Period(in days)" this are the days that can be extended after the dead-line to use this functionality we have extendLoan function.
 Try pasting the code below to extend the Loan. 
+
 
 ```javascript
 extendLoan = async () => {
@@ -307,8 +309,10 @@ extendLoan = async () => {
   });
 }
 ```
+
 Now if a borrower wants to cancel a listing he can use cancelLoan function.
 Try pasting the code below to cancel the Loan.
+
 
 ```javascript
 cancelLoan = async () => {
@@ -377,6 +381,7 @@ init();
 ```
 
 Now run in terminal
+
 ```bash
 parcel index.html
 ```
