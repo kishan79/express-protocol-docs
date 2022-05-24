@@ -1,8 +1,8 @@
 site_name: Express Protocol
 theme:
       name: material
-      logo: media/pandora-logo.png
-      favicon: media/pandora-logo.png
+      logo: media/express-logo.png
+      favicon: media/express-logo.png
 nav:
       - Overview: index.md
       - "Why Express?": express.md
