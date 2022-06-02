@@ -209,24 +209,11 @@ const itemURI = document.getElementById("txtCreateItemURI");
 const createItemButton = document.getElementById("btnCreateItem");
 createItemButton.onclick = mintNft;
 
-const itemURI1 = document.getElementById("txtCreateItemURI1");
-const itemURI2 = document.getElementById("txtCreateItemURI2");
-
-const createItemsButton = document.getElementById("btnCreateItemInBatch");
-createItemsButton.onclick = batchMintNft;
-
 const sellItemTokenId = document.getElementById("numSellItemTokenId");
 const sellItemPrice = document.getElementById("numSellItemPrice");
 
 const sellItemButton = document.getElementById("btnSellItem");
 sellItemButton.onclick = sellNft;
-
-const auctionItemTokenId = document.getElementById("numAuctionItemTokenId");
-const auctionItemPrice = document.getElementById("numAuctionItemPrice");
-const auctionItemTime = document.getElementById("numAuctionItemTime");
-
-const auctionItemButton = document.getElementById("btnAuctionItem");
-auctionItemButton.onclick = auctionNft;
 
 const buyItemSaleId = document.getElementById("numBuyItem");
 const buyItemAmmount = document.getElementById("numBuyItemAmmount");
