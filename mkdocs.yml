@@ -1,8 +1,8 @@
-site_name: Express Protocol
+site_name: ""
 theme:
       name: material
-      logo: media/express-logo.png
-      favicon: media/express-logo.png
+      logo: media/Frame.svg
+      favicon: media/Favicon.svg
 nav:
       - Overview: index.md
       - "Why Express?": express.md
