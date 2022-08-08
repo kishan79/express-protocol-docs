@@ -4,7 +4,7 @@
 
 ### Intro
 
-  In this guide we will build a Dapp using Express Protocol SDK through which NFT makers/celebs can mint and sell their NFT collection directly on Ethereum.<br>
+  In this guide we will build a Dapp using Express Protocol SDK through which NFT makers/celebs can mint and Transfer their NFT collection directly on Ethereum.<br>
   Basically celebs and NFT creators can make their own collection and can drop NFTs, whenever they want. 
   These NFT collection can later be traded using Express SDK.
   You need to connect a wallet, so make sure you have metamask wallet installed.
@@ -40,8 +40,8 @@
 
    Make a index.html file and paste the following code. <br>
    We have made three section here, first is for creating the collection ie.. creating the smart contract for the NFT collection, user will have to fill the input fields for Collection's Name, Symbol, Description and royalities.<br>
-   Now their is NFT ticket minting section, in technical terms Collection owner can mint ERC1155 token in the smart contract they have made earlier, For this we have three input fields in which owner should enter the Collection address, Token's URI and the royalities that has to be shared with other people. <br>
-   Now the Owner have to sell the NFT Tickets in the market, so their is a sell ticket function which takes Collection address, TokenID and Price of the token as input.
+   Now their is NFT minting section, in technical terms Collection owner can mint ERC1155 token in the smart contract they have made earlier, For this we have three input fields in which owner should enter the Collection address, Token's URI and the royalities that has to be shared with other people. <br>
+   Now the Owner can transfer the NFT in the market, so their is a transfer NFT function which takes Collection address, TokenID and Price of the token as input.
 
 ```html
 <!DOCTYPE html>
@@ -104,7 +104,7 @@
     </div>
 
     <div id="sellInCollection">
-      <h4>Sell in collection</h4>
+      <h4>transfer in collection</h4>
       <input
         type="text"
         id="sellCollectionAddress"
