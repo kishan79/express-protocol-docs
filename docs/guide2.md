@@ -4,9 +4,9 @@
 
 ### Intro
 
-  In this guide we will build a Dapp using Express Protocol SDK through which NFT makers/celebs can mint and Transfer their NFT collection directly on Ethereum.<br>
-  Basically celebs and NFT creators can make their own collection and can drop NFTs, whenever they want. 
-  These NFT collection can later be traded using Express SDK.
+  In this guide we will build a Dapp using Express Protocol SDK through which NFT makers/celebs can mint and Transfer their NFT directly on Ethereum.<br>
+  Basically celebs and NFT creators can mint their own NFTs and can drop NFTs, whenever they want. 
+  These NFT can later be traded using Express SDK.
   You need to connect a wallet, so make sure you have metamask wallet installed.
 
   Alright without further ado, let's create our Dapp!
@@ -32,16 +32,16 @@
   ```bash
   npm init 
   npm i pandora-express
-  npm install -g parcel-bundler 
+  npm install -g parcel 
   ``` 
   ![Screenshot](/media/pandora-install.png)
 
   **3.Building the UI**
 
    Make a index.html file and paste the following code. <br>
-   We have made three section here, first is for creating the collection ie.. creating the smart contract for the NFT collection, user will have to fill the input fields for Collection's Name, Symbol, Description and royalities.<br>
-   Now their is NFT minting section, in technical terms Collection owner can mint ERC1155 token in the smart contract they have made earlier, For this we have three input fields in which owner should enter the Collection address, Token's URI and the royalities that has to be shared with other people. <br>
-   Now the Owner can transfer the NFT in the market, so their is a transfer NFT function which takes Collection address, TokenID and Price of the token as input.
+   We have made two section here, first is for creating NFT in which any user can mint NFT by giving TokenURI as an argument.<br>
+   Now their is NFT drop/transfer section, the Owner can transfer the NFT in the market, so their is a transfer NFT function which takes TokenID and receiver's address <br>
+
 
 ```html
 <!DOCTYPE html>
@@ -54,76 +54,40 @@
   </head>
   <body>
     <h1>NFT Drop</h1>
-    <div id="Collection">
-      <h4>Create Collection</h4>
+    <div id="createItem">
+      <h4>Mint NFT</h4>
       <input
         type="text"
-        id="collectionName"
+        id="txtCreateItemURI"
         required
-        placeholder="Enter Collection Name"
-      />
-      <input
-        type="text"
-        id="collectionSymbol"
-        required
-        placeholder="Enter collection Symbol"
-      />
-      <input
-        type="text"
-        id="collectionDescription"
-        required
-        placeholder="Enter collection Description"
-      />
-      <input
-        type="number"
-        id="collectionRoyalties"
-        required
-        placeholder="Enter collection Royalties"
+        placeholder="Enter TokenURI"
       />
 
-      <button id="btnCreateCollection">Create Collection</button>
+      <button id="btnCreateItem">Mint NFT</button>
     </div>
 
-    <div id="mintInCollection">
-      <h4>Mint in collection</h4>
-      <input
-        type="text"
-        id="collectionAddress"
-        required
-        placeholder="Enter collection Address"
-      />
-      <input type="text" id="tokenURI" required placeholder="Enter TokenURI" />
+    <div id="dropItem">
+      <h4>Drop NFT</h4>
       <input
         type="number"
-        id="royalties"
-        required
-        placeholder="Enter Royalties"
-      />
-
-      <button id="btnMintInCollection">Mint in collection</button>
-    </div>
-
-    <div id="sellInCollection">
-      <h4>transfer in collection</h4>
-      <input
-        type="text"
-        id="sellCollectionAddress"
-        required
-        placeholder="Enter collection Address"
-      />
-      <input
-        type="number"
-        id="sellTokenId"
-        required
+        min="1"
+        step="1"
+        id="numDropItemTokenId"
         placeholder="Enter TokenId"
+        required
       />
-      <input type="number" id="sellPrice" required placeholder="Enter Price" />
+      <input
+        type="text"
+        id="txtDropItemToAddress"
+        placeholder="Enter receiver's address"
+        required
+      />
 
-      <button id="btnSellInCollection">Sell in collection</button>
+      <button id="btnDropItem">Drop NFT</button>
     </div>
 
-     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
 ```
@@ -141,74 +105,50 @@ As we have pasted the code, now our frontend will look something like this:
 
   ```javascript
   //Import createPandoraExpressSDK from SDK
-  const { createPandoraExpressSDK } = require("pandora-express");
-  const pandoraSDK = createPandoraExpressSDK();
+const { createPandoraExpressSDK } = require("pandora-express");
+const pandoraSDK = createPandoraExpressSDK();
 
-  //Connecting with Metamask wallet.
-  const init = async () => {
+//Connecting with Metamask wallet.
+const init = async () => {
   //check if metamask is present
-    if (window.ethereum) {
-      window.web3 = new Web3(window.ethereum);
-      await window.ethereum.enable();
-      console.log("Connected");
-    } else {
-      alert("Metamask not found");
-    }
-  };
+  if (window.ethereum) {
+    window.web3 = new Web3(window.ethereum);
+    await window.ethereum.enable();
+    console.log("Connected");
+  } else {
+    alert("Metamask not found");
+  }
+};
 
   ```
 
-Now, we have to define the Create collection function, that will create a ERC721 smart Contract, through which the owner can mint any number of NFT they want. 
-
-```javascript
-const createCollection = async () => {
-  const accounts = await web3.eth.getAccounts();
-  const chainId = await web3.eth.net.getId();
-  console.log(chainId);
-  await pandoraSDK.erc721.collection.createCollection(
-    web3,
-    chainId,
-    accounts[0],
-    collectionName.value, //Name of Collection
-    collectionSymbol.value, // Symbol of Collection
-    collectionDescription.value, // Description of Collection
-    [[accounts[0], collectionRoyalties.value]] // Royalities
-  );
-};
-```
-
-After creating collection, creators can Mint their NFT using pandoraSDK.erc721.collection.mint() function.<br>
+Now, The creators can Mint their NFT using pandoraSDK.erc721.nft.mint() function.<br>
 Let's define a function for the same.
 
 ```javascript
-const mintInCollection = async () => {
+mintNft = async () => {
   const accounts = await web3.eth.getAccounts();
   const chainId = await web3.eth.net.getId();
   console.log(chainId);
-  await pandoraSDK.erc721.collection.mint(
-    web3,
-    collectionAddress.value, //Address of collection Contract
-    tokenURI.value, // URI of token
-    accounts[0], // Account to mint NFT
-    [[accounts[0], collectionRoyalties.value]] // Royalities
-  );
-}
+  await pandoraSDK.erc721.nft.mint(web3, chainId, accounts[0], itemURI.value, [
+    [accounts[0], 100],
+  ]);
+};
 ```
 
-After Minting NFTs, Owners/Creators can put their NFTs on sale using pandoraSDK.erc721.collection.sellNFT() function
+After Minting NFTs, Owners/Creators can Drop/Transfer their NFTs using pandoraSDK.erc721.order.transferNFT() function
 
 ```javascript
-const sellInCollection = async () => {
+dropNft = async () => {
   const accounts = await web3.eth.getAccounts();
   const chainId = await web3.eth.net.getId();
   console.log(chainId);
-  await pandoraSDK.erc721.collection.sellNFT(
+  await pandoraSDK.erc721.order.transferNFT(
     web3,
     chainId,
-    sellCollectionAddress.value, // Collection Address
-    sellTokenId.value, // Token ID
-    sellPrice.value, // Base price to sell
-    accounts[0]
+    accounts[0],
+    dropItemToAddress.value,
+    dropItemTokenId.value
   );
 };
 ```
@@ -221,27 +161,16 @@ Paste the code written below to main.js.
 
 
 ```javascript
-const collectionName = document.getElementById("collectionName");
-const collectionSymbol = document.getElementById("collectionSymbol");
-const collectionDescription = document.getElementById("collectionDescription");
-const collectionRoyalties = document.getElementById("collectionRoyalties");
+const itemURI = document.getElementById("txtCreateItemURI");
 
-const CollectionButton = document.getElementById("btnCreateCollection");
-CollectionButton.onclick = createCollection;
+const createItemButton = document.getElementById("btnCreateItem");
+createItemButton.onclick = mintNft;
 
-const collectionAddress = document.getElementById("collectionAddress");
-const tokenURI = document.getElementById("tokenURI");
-const royalties = document.getElementById("royalties");
+const dropItemToAddress = document.getElementById("txtDropItemToAddress");
+const dropItemTokenId = document.getElementById("numDropItemTokenId");
 
-const btnMintInCollection = document.getElementById("btnMintInCollection");
-btnMintInCollection.onclick = mintInCollection;
-
-const sellCollectionAddress = document.getElementById("sellCollectionAddress");
-const sellTokenId = document.getElementById("sellTokenId");
-const sellPrice = document.getElementById("sellPrice");
-
-const btnSellInCollection = document.getElementById("btnSellInCollection");
-btnSellInCollection.onclick = sellInCollection;
+const dropItemButton = document.getElementById("btnDropItem");
+dropItemButton.onclick = dropNft;
 
 init();
 ```
@@ -253,6 +182,6 @@ parcel index.html
 
  **That's it!**
 
-  Congratulations! You have created your first NFT Drop and minted as well as listed your first Token for sale in the Marketplace ! If you want to use this functionality and numerous others like timed auction, bidding, etc today in your app, check out the [Express SDK](sdk/overview.md) section which gives you a plug and play SDK component for front end.
+  Congratulations! You have created your first NFT Drop and minted as well as transfer your first Token from  our Marketplace ! If you want to use this functionality and numerous others like timed auction, bidding, etc today in your app, check out the [Express SDK](sdk/overview.md) section which gives you a plug and play SDK component for front end.
 
 ***
