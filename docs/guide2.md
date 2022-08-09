@@ -103,8 +103,8 @@ As we have pasted the code, now our frontend will look something like this:
   Now we have to import SDK function in our Dapp and make connection with blockchain using metamask.
   Paste the code below in main.js file.
 
-  ```javascript
-  //Import createPandoraExpressSDK from SDK
+```javascript
+//Import createPandoraExpressSDK from SDK
 const { createPandoraExpressSDK } = require("pandora-express");
 const pandoraSDK = createPandoraExpressSDK();
 
@@ -119,8 +119,7 @@ const init = async () => {
     alert("Metamask not found");
   }
 };
-
-  ```
+```
 
 Now, The creators can Mint their NFT using pandoraSDK.erc721.nft.mint() function.<br>
 Let's define a function for the same.
