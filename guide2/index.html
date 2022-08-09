@@ -8,12 +8,12 @@
       
       
       
-      <link rel="icon" href="../media/express-logo.png">
+      <link rel="icon" href="../media/Favicon.svg">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
     
     
       
-        <title>NFT-Drop Dapp - Express Protocol</title>
+        <title>NFT-Drop Dapp - </title>
       
     
     
@@ -73,9 +73,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Express Protocol" class="md-header__button md-logo" aria-label="Express Protocol" data-md-component="logo">
+    <a href=".." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
       
-  <img src="../media/express-logo.png" alt="logo">
+  <img src="../media/Frame.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -85,7 +85,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Express Protocol
+            
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -158,12 +158,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Express Protocol" class="md-nav__button md-logo" aria-label="Express Protocol" data-md-component="logo">
+    <a href=".." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
       
-  <img src="../media/express-logo.png" alt="logo">
+  <img src="../media/Frame.svg" alt="logo">
 
     </a>
-    Express Protocol
+    
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -2118,9 +2118,9 @@
 <hr />
 <h3 id="create-nft-drop-dapp-using-pandora-express-sdk">Create NFT Drop Dapp using Pandora-express SDK</h3>
 <h3 id="intro">Intro</h3>
-<p>In this guide we will build a Dapp using Express Protocol SDK through which NFT makers/celebs can mint and sell their NFT collection directly on Ethereum.<br>
-  Basically celebs and NFT creators can make their own collection and can drop NFTs, whenever they want. 
-  These NFT collection can later be traded using Express SDK.
+<p>In this guide we will build a Dapp using Express Protocol SDK through which NFT makers/celebs can mint and Transfer their NFT directly on Ethereum.<br>
+  Basically celebs and NFT creators can mint their own NFTs and can drop NFTs, whenever they want. 
+  These NFT can later be traded using Express SDK.
   You need to connect a wallet, so make sure you have metamask wallet installed.</p>
 <p>Alright without further ado, let's create our Dapp!</p>
 <h3 id="prerequisites">Prerequisites</h3>
@@ -2137,14 +2137,13 @@ Parcel Bundler(For bundling Javascript)
 <p>Run in terminal</p>
 <p><div class="highlight"><pre><span></span><code>npm init 
 npm i pandora-express
-npm install -g parcel-bundler 
+npm install -g parcel 
 </code></pre></div>
   <img alt="Screenshot" src="/media/pandora-install.png" /></p>
 <p><strong>3.Building the UI</strong></p>
 <p>Make a index.html file and paste the following code. <br>
-   We have made three section here, first is for creating the collection ie.. creating the smart contract for the NFT collection, user will have to fill the input fields for Collection's Name, Symbol, Description and royalities.<br>
-   Now their is NFT ticket minting section, in technical terms Collection owner can mint ERC1155 token in the smart contract they have made earlier, For this we have three input fields in which owner should enter the Collection address, Token's URI and the royalities that has to be shared with other people. <br>
-   Now the Owner have to sell the NFT Tickets in the market, so their is a sell ticket function which takes Collection address, TokenID and Price of the token as input.</p>
+   We have made two section here, first is for creating NFT in which any user can mint NFT by giving TokenURI as an argument.<br>
+   Now their is NFT drop/transfer section, the Owner can transfer the NFT in the market, so their is a transfer NFT function which takes TokenID and receiver's address <br></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -2155,76 +2154,40 @@ npm install -g parcel-bundler
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>NFT Drop<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Collection&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Create Collection<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;createItem&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Mint NFT<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">input</span>
         <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;collectionName&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;txtCreateItemURI&quot;</span>
         <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Collection Name&quot;</span>
-      <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;collectionSymbol&quot;</span>
-        <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter collection Symbol&quot;</span>
-      <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;collectionDescription&quot;</span>
-        <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter collection Description&quot;</span>
-      <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;collectionRoyalties&quot;</span>
-        <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter collection Royalties&quot;</span>
+        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter TokenURI&quot;</span>
       <span class="p">/&gt;</span>
 
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btnCreateCollection&quot;</span><span class="p">&gt;</span>Create Collection<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btnCreateItem&quot;</span><span class="p">&gt;</span>Mint NFT<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mintInCollection&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Mint in collection<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;collectionAddress&quot;</span>
-        <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter collection Address&quot;</span>
-      <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tokenURI&quot;</span> <span class="na">required</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter TokenURI&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dropItem&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Drop NFT<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">input</span>
         <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;royalties&quot;</span>
-        <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Royalties&quot;</span>
-      <span class="p">/&gt;</span>
-
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btnMintInCollection&quot;</span><span class="p">&gt;</span>Mint in collection<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sellInCollection&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Sell in collection<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;sellCollectionAddress&quot;</span>
-        <span class="na">required</span>
-        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter collection Address&quot;</span>
-      <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span>
-        <span class="na">id</span><span class="o">=</span><span class="s">&quot;sellTokenId&quot;</span>
-        <span class="na">required</span>
+        <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+        <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;numDropItemTokenId&quot;</span>
         <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter TokenId&quot;</span>
+        <span class="na">required</span>
       <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sellPrice&quot;</span> <span class="na">required</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter Price&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;txtDropItemToAddress&quot;</span>
+        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter receiver&#39;s address&quot;</span>
+        <span class="na">required</span>
+      <span class="p">/&gt;</span>
 
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btnSellInCollection&quot;</span><span class="p">&gt;</span>Sell in collection<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btnDropItem&quot;</span><span class="p">&gt;</span>Drop NFT<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
@@ -2241,7 +2204,7 @@ As we have pasted the code, now our frontend will look something like this:</p>
 
 <span class="c1">//Connecting with Metamask wallet.</span>
 <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="c1">//check if metamask is present</span>
+  <span class="c1">//check if metamask is present</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">window</span><span class="p">.</span><span class="nx">web3</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">);</span>
     <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span>
@@ -2251,76 +2214,44 @@ As we have pasted the code, now our frontend will look something like this:</p>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>Now, we have to define the Create collection function, that will create a ERC721 smart Contract, through which the owner can mint any number of NFT they want. </p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">createCollection</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<p>Now, The creators can Mint their NFT using pandoraSDK.erc721.nft.mint() function.<br>
+Let's define a function for the same.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">mintNft</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getAccounts</span><span class="p">();</span>
   <span class="kd">const</span> <span class="nx">chainId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chainId</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">pandoraSDK</span><span class="p">.</span><span class="nx">erc721</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span>
+  <span class="k">await</span> <span class="nx">pandoraSDK</span><span class="p">.</span><span class="nx">erc721</span><span class="p">.</span><span class="nx">nft</span><span class="p">.</span><span class="nx">mint</span><span class="p">(</span><span class="nx">web3</span><span class="p">,</span> <span class="nx">chainId</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="nx">itemURI</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">[</span><span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="mf">100</span><span class="p">],</span>
+  <span class="p">]);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>After Minting NFTs, Owners/Creators can Drop/Transfer their NFTs using pandoraSDK.erc721.order.transferNFT() function</p>
+<div class="highlight"><pre><span></span><code><span class="nx">dropNft</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getAccounts</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">chainId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chainId</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">pandoraSDK</span><span class="p">.</span><span class="nx">erc721</span><span class="p">.</span><span class="nx">order</span><span class="p">.</span><span class="nx">transferNFT</span><span class="p">(</span>
     <span class="nx">web3</span><span class="p">,</span>
     <span class="nx">chainId</span><span class="p">,</span>
     <span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span>
-    <span class="nx">collectionName</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">//Name of Collection</span>
-    <span class="nx">collectionSymbol</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// Symbol of Collection</span>
-    <span class="nx">collectionDescription</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// Description of Collection</span>
-    <span class="p">[[</span><span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="nx">collectionRoyalties</span><span class="p">.</span><span class="nx">value</span><span class="p">]]</span> <span class="c1">// Royalities</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div>
-<p>After creating collection, creators can Mint their NFT using pandoraSDK.erc721.collection.mint() function.<br>
-Let's define a function for the same.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">mintInCollection</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getAccounts</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">chainId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chainId</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">pandoraSDK</span><span class="p">.</span><span class="nx">erc721</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">mint</span><span class="p">(</span>
-    <span class="nx">web3</span><span class="p">,</span>
-    <span class="nx">collectionAddress</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">//Address of collection Contract</span>
-    <span class="nx">tokenURI</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// URI of token</span>
-    <span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="c1">// Account to mint NFT</span>
-    <span class="p">[[</span><span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="nx">collectionRoyalties</span><span class="p">.</span><span class="nx">value</span><span class="p">]]</span> <span class="c1">// Royalities</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>After Minting NFTs, Owners/Creators can put their NFTs on sale using pandoraSDK.erc721.collection.sellNFT() function</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">sellInCollection</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getAccounts</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">chainId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chainId</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">pandoraSDK</span><span class="p">.</span><span class="nx">erc721</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">sellNFT</span><span class="p">(</span>
-    <span class="nx">web3</span><span class="p">,</span>
-    <span class="nx">chainId</span><span class="p">,</span>
-    <span class="nx">sellCollectionAddress</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// Collection Address</span>
-    <span class="nx">sellTokenId</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// Token ID</span>
-    <span class="nx">sellPrice</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// Base price to sell</span>
-    <span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+    <span class="nx">dropItemToAddress</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+    <span class="nx">dropItemTokenId</span><span class="p">.</span><span class="nx">value</span>
   <span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
 <p><strong>5.Getting Data from User from Frontend</strong></p>
 <p>Now as we defined the functions for our Dapp, the last step is to get the function parameters using javascript DOM.</p>
 <p>Paste the code written below to main.js.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">collectionName</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;collectionName&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">collectionSymbol</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;collectionSymbol&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">collectionDescription</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;collectionDescription&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">collectionRoyalties</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;collectionRoyalties&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">itemURI</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;txtCreateItemURI&quot;</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">CollectionButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btnCreateCollection&quot;</span><span class="p">);</span>
-<span class="nx">CollectionButton</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">createCollection</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">createItemButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btnCreateItem&quot;</span><span class="p">);</span>
+<span class="nx">createItemButton</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">mintNft</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">collectionAddress</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;collectionAddress&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">tokenURI</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;tokenURI&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">royalties</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;royalties&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dropItemToAddress</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;txtDropItemToAddress&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dropItemTokenId</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;numDropItemTokenId&quot;</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">btnMintInCollection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btnMintInCollection&quot;</span><span class="p">);</span>
-<span class="nx">btnMintInCollection</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">mintInCollection</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">sellCollectionAddress</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;sellCollectionAddress&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">sellTokenId</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;sellTokenId&quot;</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">sellPrice</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;sellPrice&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">btnSellInCollection</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btnSellInCollection&quot;</span><span class="p">);</span>
-<span class="nx">btnSellInCollection</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">sellInCollection</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">dropItemButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;btnDropItem&quot;</span><span class="p">);</span>
+<span class="nx">dropItemButton</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">dropNft</span><span class="p">;</span>
 
 <span class="nx">init</span><span class="p">();</span>
 </code></pre></div>
@@ -2328,7 +2259,7 @@ Let's define a function for the same.</p>
 <div class="highlight"><pre><span></span><code>parcel index.html
 </code></pre></div></p>
 <p><strong>That's it!</strong></p>
-<p>Congratulations! You have created your first NFT Drop and minted as well as listed your first Token for sale in the Marketplace ! If you want to use this functionality and numerous others like timed auction, bidding, etc today in your app, check out the <a href="../sdk/overview/">Express SDK</a> section which gives you a plug and play SDK component for front end.</p>
+<p>Congratulations! You have created your first NFT Drop and minted as well as transfer your first Token from  our Marketplace ! If you want to use this functionality and numerous others like timed auction, bidding, etc today in your app, check out the <a href="../sdk/overview/">Express SDK</a> section which gives you a plug and play SDK component for front end.</p>
 <hr />
 
               
